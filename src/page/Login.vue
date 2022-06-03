@@ -89,7 +89,6 @@ export default {
         // 1.1项目中除了登录之外的其他API接口,必须在登录之后才能访问
         // 1.2token 只应在当前网站打开期间生效,所以将token保存在sessionStorage中
         sessionStorage.setItem('token', res.data.token)
-        console.log(res.data.token)
         // 2.通过编程式导航跳转到后台主页,路由地址是 / home
         this.$router.push('/home') // push 重定向  replace不会在浏览器历史history中留下浏览记录,无法回退,push则可以
       })
