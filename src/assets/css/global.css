@@ -3,6 +3,7 @@ html,body,#app {
     height: 100%;
     margin: 0;
     padding: 0;
+    min-width: 1266px;
 }
 .el-breadcrumb {
     margin-bottom: 17px;
@@ -19,4 +20,7 @@ html,body,#app {
 }
 .el-menu {
     border-right: none !important;
-  }
+}
+.el-dialog {
+    min-width: 480px;
+}
