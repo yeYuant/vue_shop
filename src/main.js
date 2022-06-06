@@ -6,6 +6,7 @@ import router from './router/router'
 import './assets/css/global.css'
 // 导入字体图标
 import './assets/fonts/iconfont.css'
+import TreeTable from 'vue-table-with-tree-grid'
 // 导入 element 
 import element from './plugins/element'
 import axios from 'axios'
@@ -20,7 +21,7 @@ Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
 
-
+Vue.component('tree-table', TreeTable)
 new Vue({
   el: "#app",
   router,

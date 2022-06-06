@@ -15,7 +15,7 @@ html,body,#app {
     font-size: 12px !important;
     margin-top: 17px;
 }
-.el-pagination {
+.el-pagination ,.treeTable{
     margin-top: 17px;
 }
 .el-menu {
@@ -23,4 +23,10 @@ html,body,#app {
 }
 .el-dialog {
     min-width: 480px;
+}
+.el-cascader {
+    width: 100%;
+}
+.el-cascader-panel {
+    height: 400px;
 }

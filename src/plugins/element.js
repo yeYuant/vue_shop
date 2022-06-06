@@ -28,7 +28,8 @@ import {
     MessageBox,
     Tag,
     Tree,
-    Option
+    Option,
+    Cascader
 } from 'element-ui'
 // Message需要进行全局挂载
 
@@ -59,6 +60,7 @@ Vue.use(Dialog)
 Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Option)
+Vue.use(Cascader)
 
 Vue.prototype.$message = Message
 Vue.prototype.$confirm = MessageBox.confirm
