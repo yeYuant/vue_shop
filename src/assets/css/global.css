@@ -3,7 +3,7 @@ html,body,#app {
     height: 100%;
     margin: 0;
     padding: 0;
-    min-width: 1266px;
+    min-width: 1200px;
 }
 .el-breadcrumb {
     margin-bottom: 17px;
@@ -26,6 +26,7 @@ html,body,#app {
 }
 .el-cascader {
     width: 100%;
+    margin-top: 7px;
 }
 .el-cascader-panel {
     height: 400px;

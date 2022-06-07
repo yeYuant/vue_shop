@@ -224,7 +224,7 @@ export default {
         expandTrigger: 'hover',
         checkStrictly: true,
       },
-      // 选中的饿父级分类的ID数组
+      // 选中的父级分类的ID数组
       selectedKeys: [],
 
       // 控制编辑分类对话框的显示与隐藏
