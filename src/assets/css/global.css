@@ -40,3 +40,6 @@ html,body,#app {
 .ql-editor {
     min-height: 200px;
 }
+.el-table__cell {
+    padding: 5px 0 !important;
+}

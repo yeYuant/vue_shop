@@ -85,6 +85,7 @@
       title="修改商品信息"
       :visible.sync="setGoodsDialogVisible"
       width="37%"
+      @clise="setEditGoddsDialogClosed"
     >
       <el-form
         :model="editGoodsFrom"
@@ -248,6 +249,10 @@ export default {
         this.getGoodsList()
         this.setGoodsDialogVisible = false
       })
+    },
+    // 监听修改商品信息对话框的关闭事件
+    setEditGoddsDialogClosed() {
+      this.$refs.editGoodsFromRef.resetFields()
     },
   },
 }
