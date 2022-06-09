@@ -231,7 +231,6 @@ export default {
         return this.$message.error('获取商品列表失败!')
       }
       this.editGoodsFrom = res.data
-      console.log(this.editGoodsFrom)
       this.setGoodsDialogVisible = true
     },
     // 点击按钮,提交修改的商品数据
