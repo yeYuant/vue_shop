@@ -31,3 +31,12 @@ html,body,#app {
 .el-cascader-panel {
     height: 400px;
 }
+.el-steps {
+    margin: 17px 0;
+}
+.el-step__title {
+    font-size: 13px !important;
+}
+.ql-editor {
+    min-height: 200px;
+}
