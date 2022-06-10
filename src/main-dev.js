@@ -15,14 +15,28 @@ import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
 
+// 导入 nprogress 包对应的JS 和CSS
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
+
 // 导入 element 
-import element from './plugins/element'
+import './plugins/element.js'
 import axios from 'axios'
+
+
+// 在 request拦截器中,展示 NProgress.start()
 axios.interceptors.request.use(config => {
+  NProgress.start()
   // console.log(config);
   config.headers.Authorization = sessionStorage.getItem('token')
   return config //在最后,必须return config
 })
+// 在 response拦截器中,展示 NProgress.done()
+axios.interceptors.response.use(config => {
+  NProgress.done()
+  return config
+})
+
 // 配置请求的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 Vue.prototype.$axios = axios
@@ -36,6 +50,7 @@ Vue.use(VueQuillEditor)
 
 // 格式化时间过滤器
 Vue.filter('dateFormat', function (originVal) {
+  originVal = originVal * 1000
   const dt = new Date(originVal)
   const y = dt.getFullYear()
   const m = (dt.getMonth() + 1 + '').padStart(2, '0')
@@ -51,6 +66,5 @@ Vue.filter('dateFormat', function (originVal) {
 new Vue({
   el: "#app",
   router,
-  element,
   render: h => h(App),
 })

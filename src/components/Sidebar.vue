@@ -21,12 +21,7 @@
         <span>{{ item.authName }}</span>
       </template>
       <!-- 二级菜单 -->
-      <el-menu-item
-        :index="'/home/' + subItem.path"
-        v-for="subItem in item.children"
-        :key="subItem.id"
-        @click="saveNavState('/home/' + subItem.path)"
-      >
+      <el-menu-item :index="'/home/' + subItem.path" v-for="subItem in item.children" :key="subItem.id" @click="saveNavState('/home/' + subItem.path)">
         <!-- 二级菜单的模板区域 -->
         <template slot="title">
           <!-- 字体图标 -->
@@ -62,7 +57,4 @@ export default {
 </script>
 
 <style lang="less" >
-.iconfont {
-  margin-right: 7px;
-}
 </style>

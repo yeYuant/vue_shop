@@ -12,17 +12,8 @@
       <!-- 搜索区域 -->
       <el-row>
         <el-col :span="8">
-          <el-input
-            placeholder="请输入内容"
-            clearable
-            v-model="queryInfo.query"
-            @clear="getOrderList"
-          >
-            <el-button
-              slot="append"
-              icon="el-icon-search"
-              @click="getOrderList"
-            ></el-button>
+          <el-input placeholder="请输入内容" clearable v-model="queryInfo.query" @clear="getOrderList">
+            <el-button slot="append" icon="el-icon-search" @click="getOrderList"></el-button>
           </el-input>
         </el-col>
       </el-row>
@@ -31,42 +22,22 @@
       <el-table :data="orderList" border stripe>
         <el-table-column type="index"></el-table-column>
         <el-table-column label="订单编号" prop="order_number"></el-table-column>
-        <el-table-column
-          label="订单价格"
-          width="100px"
-          prop="order_price"
-        ></el-table-column>
+        <el-table-column label="订单价格" width="100px" prop="order_price"></el-table-column>
         <el-table-column label="是否付款" width="91px" prop="order_pay">
           <template slot-scope="scope">
-            <el-tag type="success" v-if="scope.row.pay_status === '1'"
-              >已付款</el-tag
-            >
+            <el-tag type="success" v-if="scope.row.pay_status === '1'">已付款</el-tag>
             <el-tag type="danger" v-else>未付款</el-tag>
           </template>
         </el-table-column>
-        <el-table-column
-          label="是否发货"
-          width="100px"
-          prop="is_send"
-        ></el-table-column>
+        <el-table-column label="是否发货" width="100px" prop="is_send"></el-table-column>
         <el-table-column label="下单时间" width="150px" prop="create_time">
           <template slot-scope="scope">
             {{ scope.row.create_time | dateFormat }}
           </template>
         </el-table-column>
         <el-table-column label="操作" width="127px">
-          <el-button
-            type="primary"
-            icon="el-icon-edit"
-            size="mini"
-            @click="showBox"
-          ></el-button>
-          <el-button
-            type="success"
-            icon="el-icon-location"
-            size="mini"
-            @click="showProgressBox"
-          ></el-button>
+          <el-button type="primary" icon="el-icon-edit" size="mini" @click="showBox"></el-button>
+          <el-button type="success" icon="el-icon-location" size="mini" @click="showProgressBox"></el-button>
         </el-table-column>
       </el-table>
 
@@ -84,24 +55,10 @@
     </el-card>
 
     <!-- 修改地址对话框 -->
-    <el-dialog
-      title="修改地址"
-      :visible.sync="editAddressdialogVisible"
-      width="47%"
-      @close="editAddressDialogClosed"
-    >
-      <el-form
-        :model="addressFrom"
-        :rules="addressFromRules"
-        ref="addressFromRef"
-        label-width="100px"
-      >
+    <el-dialog title="修改地址" :visible.sync="editAddressdialogVisible" width="47%" @close="editAddressDialogClosed">
+      <el-form :model="addressFrom" :rules="addressFromRules" ref="addressFromRef" label-width="100px">
         <el-form-item label="省市区/县" prop="address1">
-          <el-cascader
-            :options="cityData"
-            :props="orderProps"
-            v-model="addressFrom.address1"
-          ></el-cascader>
+          <el-cascader :options="cityData" :props="orderProps" v-model="addressFrom.address1"></el-cascader>
         </el-form-item>
         <el-form-item label="详细地址" prop="address2">
           <el-input v-model="addressFrom.address2"></el-input>
@@ -109,25 +66,15 @@
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="editAddressdialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogVisible = false"
-          >确 定</el-button
-        >
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
       </span>
     </el-dialog>
 
     <!-- 查看物理进度的对话框 -->
-    <el-dialog
-      title="物流进度"
-      :visible.sync="setProgressDialogVisible"
-      width="47%"
-    >
+    <el-dialog title="物流进度" :visible.sync="setProgressDialogVisible" width="47%">
       <!-- 时间线 -->
       <el-timeline>
-        <el-timeline-item
-          v-for="(activity, index) in progressInfo"
-          :key="index"
-          :timestamp="activity.time"
-        >
+        <el-timeline-item v-for="(activity, index) in progressInfo" :key="index" :timestamp="activity.time">
           {{ activity.context }}
         </el-timeline-item>
       </el-timeline>
@@ -193,8 +140,7 @@ export default {
         {
           time: '2022-05-10 08:23:00',
           ftime: '2022-05-10 08:23:00',
-          context:
-            '[北京市]北京海淀育新小区营业点派件员 顺丰速运 95338正在为您派件',
+          context: '[北京市]北京海淀育新小区营业点派件员 顺丰速运 95338正在为您派件',
           location: '',
         },
         {
@@ -206,8 +152,7 @@ export default {
         {
           time: '2022-05-10 02:03:00',
           ftime: '2022-05-10 02:03:00',
-          context:
-            '快件在[北京顺义集散中心]已装车,准备发往 [北京海淀育新小区营业点]',
+          context: '快件在[北京顺义集散中心]已装车,准备发往 [北京海淀育新小区营业点]',
           location: '',
         },
         {
@@ -291,7 +236,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style  scoped>
 .el-tag {
   margin: 7px;
 }

@@ -6,27 +6,14 @@
         <img src="../assets/logo.png" />
       </div>
       <!-- 表单登录区域 -->
-      <el-form
-        :model="loginForm"
-        :rules="loginFormRules"
-        ref="loginFormRef"
-        label-width="80px"
-        class="login_from"
-      >
+      <el-form :model="loginForm" :rules="loginFormRules" ref="loginFormRef" label-width="80px" class="login_from">
         <!-- 用户名 -->
         <el-form-item prop="username">
-          <el-input
-            v-model="loginForm.username"
-            prefix-icon="el-icon-user"
-          ></el-input>
+          <el-input v-model="loginForm.username" prefix-icon="el-icon-user"></el-input>
         </el-form-item>
         <!-- 用户密码 -->
         <el-form-item prop="password">
-          <el-input
-            type="password"
-            v-model="loginForm.password"
-            prefix-icon="el-icon-lock"
-          ></el-input>
+          <el-input type="password" v-model="loginForm.password" prefix-icon="el-icon-lock"></el-input>
         </el-form-item>
         <el-form-item class="btns">
           <el-button type="primary" @click="login">登录</el-button>
@@ -97,7 +84,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style scoped>
 .login_container {
   background-color: #2b4b6b;
   height: 100%;
@@ -125,22 +112,22 @@ export default {
   border-radius: 50%;
   box-shadow: 0 0 3px #eee;
   background-color: #eee;
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
-    display: block;
-    border-radius: 50%;
-  }
+}
+.avatar_box img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  display: block;
+  border-radius: 50%;
 }
 .login_from {
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 0 17px;
+  margin-left: -35px;
   box-sizing: border-box;
 }
 .btns {

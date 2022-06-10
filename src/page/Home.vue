@@ -11,11 +11,7 @@
       <!-- 左侧导航栏 -->
       <el-aside :width="isCollapse ? '64px' : '200px'">
         <div class="toggle_button" @click="toggleCollapse">|||</div>
-        <Sidebar
-          :menulist="menulist"
-          :iconsObj="iconsObj"
-          :isCollapse="isCollapse"
-        />
+        <Sidebar :menulist="menulist" :iconsObj="iconsObj" :isCollapse="isCollapse" />
       </el-aside>
       <!-- 右侧内容主体区 -->
       <el-main>
@@ -67,7 +63,7 @@ export default {
 }
 </script>
 
-<style lang="less" scope>
+<style scope>
 .el-container {
   height: 100%;
 }
@@ -76,28 +72,28 @@ export default {
   justify-content: space-between;
   align-items: center;
   background-color: #363d40;
-  div {
-    display: flex;
-    align-items: center;
-    margin-left: -17px;
-    span {
-      margin-left: 7px;
-      font-size: 20px;
-      color: #fefefe;
-    }
-  }
+}
+.el-header div {
+  display: flex;
+  align-items: center;
+  margin-left: -17px;
+}
+.el-header div span {
+  margin-left: 7px;
+  font-size: 20px;
+  color: #fefefe;
 }
 .el-aside {
   background-color: #313743;
-  .toggle_button {
-    font-size: 12px;
-    line-height: 24px;
-    text-align: center;
-    color: #fefefe;
-    letter-spacing: 0.2em;
-    cursor: pointer;
-    background-color: #475163;
-  }
+}
+.toggle_button {
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+  color: #fefefe;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  background-color: #475163;
 }
 .el-main {
   background-color: #e9edf1;
